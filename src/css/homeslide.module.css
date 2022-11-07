@@ -1,0 +1,9 @@
+.each img {
+    height: 100px;
+  }
+.each{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
