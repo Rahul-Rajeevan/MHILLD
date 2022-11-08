@@ -241,7 +241,7 @@ import {
 
   const NAV_ITEMS= [
     {
-      label: 'Inspiration',
+      label: 'Home',
       children: [
         {
           label: 'Explore Design Work',
@@ -256,7 +256,7 @@ import {
       ],
     },
     {
-      label: 'Find Work',
+      label: 'Services',
       children: [
         {
           label: 'Job Board',
@@ -271,11 +271,11 @@ import {
       ],
     },
     {
-      label: 'Learn Design',
+      label: 'Projects',
       href: '#',
     },
     {
-      label: 'Hire Designers',
+      label: 'Contact',
       href: '#',
     },
   ];

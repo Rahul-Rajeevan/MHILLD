@@ -1,10 +1,11 @@
 import { Box, Grid, GridItem, Image, Text } from '@chakra-ui/react'
 import { useInView } from 'react-intersection-observer';
 import React, { useEffect, useRef, useState } from 'react'
-import Navbar from '../Components/Navbar'
+
 import styles from "../css/home.module.css"
 import cartoon from "../Images/cartoon.jpg"
 import HomeSlide from './HomeSlide';
+import Hero from './Hero';
 
 const Home = () => {
 const img=[{src:"https://mhidesign.com/wp-content/uploads/2014/08/design.jpg",text:"DESIGN CONSULTANCY"},
@@ -12,6 +13,10 @@ const img=[{src:"https://mhidesign.com/wp-content/uploads/2014/08/design.jpg",te
 {src:"https://mhidesign.com/wp-content/uploads/2014/08/thumb12.jpg",text:"CUSTOM JOINERY WORKS"},
 {src:"https://mhidesign.com/wp-content/uploads/2014/08/thumb13.jpg",text:"SOFT FURNISHING"},
 {src:"https://mhidesign.com/wp-content/uploads/2014/08/thumb14.jpg",text:"MEP SERVICES"}];
+
+const images=["https://mhidesign.com/wp-content/uploads/2015/01/vortex-2-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6217-Fina2l1-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6153-Final-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6168-Final-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/IMG_3028-303x210.jpg","https://mhidesign.com/wp-content/uploads/2015/01/vortex-2-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6217-Fina2l1-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6153-Final-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/MG_6168-Final-303x210.jpg","https://mhidesign.com/wp-content/uploads/2014/09/IMG_3028-303x210.jpg"]
+
+
 const { ref:myRef, inView:visible} = useInView({
 });
 
@@ -22,19 +27,11 @@ useEffect(() => {
 
   return (
     <div>
-        <Box m="auto" w="80%">
-        <Navbar/>
-        <div style={{height:"100vh", display:"flex",alignItems:"center",justifyContent:"center"}}>
-          <div style={{width:"50%"}}>
-          <p style={{fontSize:"40px"}}>Expert interior design from the brightest minds in the industry</p>
-        <p>The science of efficient space utilisation and the art of aesthetics in action, combined into a single approach – that is how we do interior design here at Mussa Hussain Designs.</p>
-        <p>Our services is extended to the diffeent locations include JAFZA, JLT etc.</p>
-          </div>
-        <div style={{width:"50%"}}>
-          <img src={cartoon} alt=""/>
-        </div>
-        </div>
+        <Box>
+        <Hero/>
         {/* 5 boxes */}
+        <p  className={styles.head1}>At Mussa Hussain Designs, we approach interior design using a combination of the science of effective space utilisation and the art of aesthetics in action.</p>
+       <div style={{height:"10vh"}}></div>
         <div className={styles.grid} ref={myRef}>
           {img.map(e=><div key={e.src} className={visible?styles.show:styles.hidden}>
             <img src={e.src} alt={e.text}/>
@@ -46,12 +43,6 @@ useEffect(() => {
 </div>
 
         </Box>
-        <div style={{height:"30vh",background: "linear-gradient(180deg, hsla(360, 75%, 43%, 1) 0%, hsla(360, 79%, 39%, 1) 49%, hsla(0, 87%, 24%, 1) 100%)"}}>
-        {/* {slide.map(e=><div key={e}>
-            <img src={e} alt={e}/>
-          </div>)} */}
-          <div style={{width:"50%",margin:"auto",paddingTop:"30px"}}><HomeSlide/></div>
-</div>
     </div>
   )
 }

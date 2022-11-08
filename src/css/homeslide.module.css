@@ -1,9 +1,17 @@
-.each img {
-    height: 100px;
-  }
 .each{
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-  }
+  width:93%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.each > div {
+  display: flex;
+  background-size: cover;
+  height: 80%;
+  border-radius: 10px; 
+}
+
+/* .each1:hover{
+  transform: scale(1.1);
+} */
